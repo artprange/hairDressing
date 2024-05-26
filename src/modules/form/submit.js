@@ -10,7 +10,6 @@ const today= dayjs(new Date()).format("YYYY-MM-DD");
 selectedDate.value = today;
 
 //setting the min date as the current date
-
 selectedDate.min = today;
 
 form.onsubmit = (event) =>{
