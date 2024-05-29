@@ -9,6 +9,7 @@ const hours = document.getElementById('hours')
 export function hoursLoad({ date }){
     const opening = openingHours.map((hour)=>{
 
+        //retrieving just the hour
         const [scheduleHour] = hour.split(":")
 
         //adding the hour to the date and validating 
