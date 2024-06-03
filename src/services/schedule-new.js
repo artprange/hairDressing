@@ -2,6 +2,7 @@ import { apiConfig } from "./api-config";
 
 export async function scheduleNew({id, name, completeBooking }){
     try{
+        //requisition to send the data
         await fetch(`${apiConfig.baseURL}/schedules`, {
             method: "POST",
             headers:{
