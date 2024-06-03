@@ -8,6 +8,9 @@ import { hoursClick } from "./hours-click.js";
 const hours = document.getElementById('hours')
 
 export function hoursLoad({ date }){
+    //resets the hours list
+    hours.innerHTML = "";
+
     const opening = openingHours.map((hour)=>{
 
         //retrieving just the hour
