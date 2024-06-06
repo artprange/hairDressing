@@ -9,12 +9,11 @@ export async function scheduleFetchByDay({date}){
       const data = await response.json();
 
       //filtering the hours by selected day
-      const dailySchedules = data.filter((schedule)=> dayjs(date).isSame(schedule.completeBooking, "day")
+      const dailySchedules = data.filter((schedule)=>
+         dayjs(date).isSame(schedule.completeBooking, "day")
     )
 
-    return dailySchedule
-
-
+    return dailySchedules
     } catch (error){
         console.log(error)
         alert("Não foi possível buscar os agendamentos do dia selecionado.")

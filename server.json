@@ -1,9 +1,24 @@
 {
   "schedules": [
     {
-      "id": 1717441677335,
+      "id": "1717441677335",
       "name": "arthur",
       "completeBooking": "2024-06-20T22:00:00.000Z"
+    },
+    {
+      "id": 1717622515716,
+      "name": "arthur",
+      "completeBooking": "2024-06-06T18:00:00.000Z"
+    },
+    {
+      "id": 1717622779850,
+      "name": "arthur",
+      "completeBooking": "2024-06-06T13:00:00.000Z"
+    },
+    {
+      "id": 1717622876335,
+      "name": "arthur",
+      "completeBooking": "2024-06-06T19:00:00.000Z"
     }
   ]
 }
