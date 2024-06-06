@@ -17,6 +17,6 @@ export async function schedulesDay(){
     //renders the schedueled hours
     showSchedule({dailySchedules})
     //renders the available hours
-    hoursLoad({date});
+    hoursLoad({date, dailySchedules});
 
 }

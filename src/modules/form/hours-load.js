@@ -7,9 +7,14 @@ import { hoursClick } from "./hours-click.js";
 
 const hours = document.getElementById('hours')
 
-export function hoursLoad({ date }){
+export function hoursLoad({ date, dailySchedules }){
     //resets the hours list
     hours.innerHTML = "";
+
+
+    //retriving the booked times
+    const unavailableHours = dailySchedules.map((schedule) =>
+         dayjs(schedule.completeBooking).format("HH:mm"))
 
     const opening = openingHours.map((hour)=>{
 
@@ -18,11 +23,13 @@ export function hoursLoad({ date }){
 
         //adding the hour to the date and validating 
 
-        const isHourPast = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs());
+        const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
+
+        const available = !unavailableHours.includes(hour) && !isHourPast;
 
         return{
             hour,
-            available: isHourPast,
+            available
         }
 
     })
