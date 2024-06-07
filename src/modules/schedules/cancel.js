@@ -1,3 +1,5 @@
+import { scheduelesDay } from "./load.js"
+import { sheduleCancel } from "../../services/shcedule-cancel.js"
 const periods = document.querySelectorAll('.period');
 
 
@@ -7,7 +9,7 @@ periods.forEach((period)=>{
 
     //captures the click event on the list
 
-    period.addEventListener("click" , (event) =>{
+    period.addEventListener("click" , async (event) =>{
         if(event.target.classList.contains("cancel-icon")){
             //gets the li from the clicked parent element
             const item = event.targer.closest("li");
@@ -18,7 +20,8 @@ periods.forEach((period)=>{
             }
 
             if(isSure){
-                console.log("removido");
+                await scheduleCancel({ id })
+                scheduelesDay();
             }
         }
     })
